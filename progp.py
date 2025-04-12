@@ -1,5 +1,5 @@
-USERNAME = "shavel"  # <-- Ваш логин
-PASSWORD = "salo12321"  # <-- Ваш пароль
+USERNAME = "Епифанцев17"  # <-- Ваш логин
+PASSWORD = "karagandaaa"  # <-- Ваш пароль
 
 import re
 import time
@@ -11,7 +11,7 @@ import shutil
 from io import StringIO
 from bs4 import BeautifulSoup
 import sqlite3
-sdaadasd
+import pandas as pd
 
 # pdfminer
 
@@ -31,6 +31,17 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from openpyxl import Workbook
 from openpyxl.utils import get_column_letter
+
+
+def export_to_csv(db_name='articles.db', csv_name='articles_export.csv'):
+    try:
+        conn = sqlite3.connect(db_name)
+        df = pd.read_sql_query("SELECT * FROM articles", conn)
+        df.to_csv(csv_name, index=False)
+        conn.close()
+        print(f"Данные успешно экспортированы в CSV: {csv_name}")
+    except Exception as e:
+        print(f"Ошибка при экспорте: {e}")
 
 
 def save_to_sqlite(title: str, author: str, abstract: str, content: str, url: str, db_name='articles.db'):
@@ -274,7 +285,7 @@ def main():
             EC.visibility_of_element_located((By.NAME, "ftext"))
         )
         search_input.clear()
-        search_input.send_keys("генерация изображения")  # Ваш поисковый запрос
+        search_input.send_keys("THE ROLE OF DATABASE AND DATABASE MANAGMENT SYSTEM IN ONLINE STORE DEVELOPMENT")  # Ваш поисковый запрос
 
         # Где искать
         set_checkbox(driver, "where_name", True)       # в названии публикации
@@ -472,3 +483,4 @@ def main():
 if __name__ == "__main__":
     main()
     print_first_article()
+    export_to_csv()
