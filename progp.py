@@ -1,6 +1,6 @@
 USERNAME = "shavel"  # <-- Ваш логин
 PASSWORD = "salo12321"  # <-- Ваш пароль
-asad
+
 import re
 import time
 import requests
@@ -11,7 +11,7 @@ import shutil
 from io import StringIO
 from bs4 import BeautifulSoup
 import sqlite3
-
+sdaadasd
 
 # pdfminer
 
