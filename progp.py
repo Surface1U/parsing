@@ -1,6 +1,6 @@
 USERNAME = "shavel"  # <-- Ваш логин
 PASSWORD = "salo12321"  # <-- Ваш пароль
-
+dasdasdadasd
 import re
 import time
 import requests
