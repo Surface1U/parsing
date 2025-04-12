@@ -3,7 +3,7 @@ PASSWORD = "salo12321"  # <-- Ваш пароль
 
 import re
 import time
-import requests
+
 import tempfile
 import os
 import glob
@@ -11,7 +11,7 @@ import shutil
 from io import StringIO
 from bs4 import BeautifulSoup
 import sqlite3
-sdaadasd
+
 
 # pdfminer
 
